@@ -21,12 +21,12 @@
 // This section tell you the maximum and minimum possible values the variables in the problem statement can take. You do not need to check these constraints in your program. You can safely assume that the input given to your program will be in the given range of constraints.
 // 1 ≤ T ≤ 1000
 // 0 ≤ A,B ≤ 10000
-// Sample Input 1 
+// Sample Input 1
 // 3
 // 1 2
 // 100 200
 // 10 40
-// Sample Output 1 
+// Sample Output 1
 // 3
 // 300
 // 50

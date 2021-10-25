@@ -30,3 +30,14 @@
 // 3
 // 300
 // 50
+
+process.stdin.resume()
+process.stdin.setEncoding('utf8')
+process.stdin.on('data', function (chunk) {
+  let input = chunk.trim().split('\n').slice(1)
+  let output = input.map((numbers) => {
+    let [n1, n2] = numbers.trim().split(' ')
+    return Number(n1) + Number(n2)
+  })
+  console.log(output.join('\n'))
+})

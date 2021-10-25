@@ -26,19 +26,15 @@
 // Output:
 // 120.00
 
-function ATM(withdrawal, balance) {
-    if (withdrawal % 5 !== 0) {
-        return balance;
-    } else if (balance < withdrawal + 0.5) {
-        return balance;
-    } else {
-        return balance - (withdrawal + 0.5);
-    }
-}
+process.stdin.resume()
+process.stdin.setEncoding('utf8')
 
-console.log(ATM(30, 120));
-// 89.5
-console.log(ATM(42, 120));
-// 120
-console.log(ATM(300, 120));
-// 120
+// your code goes here
+process.stdin.on('data', function (chunk) {
+  let [withdrawal, balance] = chunk.trim().split(' ').map(Number)
+  if (withdrawal % 5 !== 0 || balance < withdrawal + 0.5) {
+    console.log(balance)
+  } else {
+    console.log(balance - (withdrawal + 0.5))
+  }
+})

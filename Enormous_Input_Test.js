@@ -20,3 +20,20 @@
 // Output:
 // 4
 
+const fs = require('fs')
+let count = 0
+fs.readFile(0, 'utf8', (error, data) => {
+  let myData = data.trim().split('\n')
+  let [n, k] = myData[0].split(' ').map(Number)
+  if (k > 10000000 && k <= 0 && n <= 0 && myData.length - 1 !== n) {
+    return
+  }
+
+  for (let index = 1; index < myData.length; index++) {
+    let numberTest = Number(myData[index])
+    if (numberTest <= 1000000000 && numberTest > 0 && numberTest % k === 0) {
+      ++count
+    }
+  }
+  return console.log(count)
+})

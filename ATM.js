@@ -29,12 +29,10 @@
 process.stdin.resume()
 process.stdin.setEncoding('utf8')
 
-// your code goes here
+var input = ''
 process.stdin.on('data', function (chunk) {
-  let [withdrawal, balance] = chunk.trim().split(' ').map(Number)
-  if (withdrawal % 5 !== 0 || balance < withdrawal + 0.5) {
-    console.log(balance)
-  } else {
-    console.log(balance - (withdrawal + 0.5))
-  }
+  input = input + chunk
+})
+process.stdin.on('end', function () {
+  console.log(input)
 })
